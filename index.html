@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Menu digital officiel de La Maison des Cyclades — Traiteur & Restaurant Grec à Paris. Découvrez nos mézés, plats traditionnels, desserts et boissons.">
+  <meta name="theme-color" content="#19539D">
+  <title>La Maison des Cyclades — Traiteur & Restaurant Grec</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Préchargement des polices locales -->
+  <link rel="preload" href="fonts/impact.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Feuille de style principale -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mobile-container">
+
+    <!-- ======================================================================
+         EN-TÊTE : SLIDER PHOTOS DU RESTAURANT + BOUTON CERTIFICATIONS
+         ====================================================================== -->
+    <header class="header-container" id="header-container" aria-label="Galerie photos du restaurant">
+      <div class="slider-track" id="header-track">
+        <div class="header-slide" style="background-image: url('images_resto/facade.jpg');" data-full="images_resto/facade.jpg" role="img" aria-label="Façade extérieure du restaurant"></div>
+        <div class="header-slide" style="background-image: url('images_resto/terrasse.jpg');" data-full="images_resto/terrasse.jpg" role="img" aria-label="Terrasse du restaurant"></div>
+        <div class="header-slide" style="background-image: url('images_resto/interieur.jpg');" data-full="images_resto/interieur.jpg" role="img" aria-label="Salle intérieure du restaurant"></div>
+        <div class="header-slide" style="background-image: url('images_resto/interieur-2.jpg');" data-full="images_resto/interieur-2.jpg" role="img" aria-label="Deuxième salle intérieure"></div>
+      </div>
+
+      <!-- Indicateurs de slide (dots) -->
+      <div class="slider-dots" id="header-dots" aria-hidden="true">
+        <span class="slider-dot active" data-slide="0"></span>
+        <span class="slider-dot" data-slide="1"></span>
+        <span class="slider-dot" data-slide="2"></span>
+        <span class="slider-dot" data-slide="3"></span>
+      </div>
+
+      <button type="button" class="certifs-btn" id="open-certifs" aria-haspopup="dialog" aria-controls="certifs-modal">
+        <i class="fas fa-certificate" aria-hidden="true"></i> CERTIFS
+      </button>
+    </header>
+
+    <!-- ======================================================================
+         MODALE 1 : LIGHTBOX (ZOOM GALERIE PHOTOS)
+         ====================================================================== -->
+    <div class="modal-overlay" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Galerie plein écran" aria-hidden="true">
+      <button type="button" class="lightbox-close" id="close-lightbox" aria-label="Fermer la galerie">&times;</button>
+
+      <button type="button" class="lightbox-nav lb-prev" id="lb-prev" aria-label="Photo précédente">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="lightbox-nav lb-next" id="lb-next" aria-label="Photo suivante">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="lightbox-track-container" id="lightbox-container">
+        <div class="lightbox-track" id="lightbox-track">
+          <div class="lightbox-slide" style="background-image: url('images_resto/facade.jpg');" role="img" aria-label="Façade extérieure du restaurant"></div>
+          <div class="lightbox-slide" style="background-image: url('images_resto/terrasse.jpg');" role="img" aria-label="Terrasse du restaurant"></div>
+          <div class="lightbox-slide" style="background-image: url('images_resto/interieur.jpg');" role="img" aria-label="Salle intérieure du restaurant"></div>
+          <div class="lightbox-slide" style="background-image: url('images_resto/interieur-2.jpg');" role="img" aria-label="Deuxième salle intérieure"></div>
+        </div>
+      </div>
+
+      <div class="slider-dots lightbox-dots" id="lightbox-dots" aria-hidden="true">
+        <span class="slider-dot active" data-slide="0"></span>
+        <span class="slider-dot" data-slide="1"></span>
+        <span class="slider-dot" data-slide="2"></span>
+        <span class="slider-dot" data-slide="3"></span>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         MODALE 2 : NOS CERTIFICATIONS
+         ====================================================================== -->
+    <div class="modal-overlay" id="certifs-modal" role="dialog" aria-modal="true" aria-labelledby="certifs-modal-title" aria-hidden="true">
+      <div class="modal-content">
+        <button type="button" class="modal-close close-modal certif-close-btn" aria-label="Fermer les certifications">&times;</button>
+        <h2 class="modal-title-certif" id="certifs-modal-title">NOS CERTIFICATIONS</h2>
+        <ul class="certifs-list">
+          <li class="certif-item">
+            <div class="certif-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <span>Alim'Confiance</span>
+          </li>
+          <li class="certif-item">
+            <div class="certif-icon"><i class="fas fa-hand-sparkles" aria-hidden="true"></i></div>
+            <span>Quality Hygiene</span>
+          </li>
+          <li class="certif-item">
+            <div class="certif-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+            <span>Halal AVS</span>
+          </li>
+          <li class="certif-item">
+            <div class="certif-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+            <span>Produit Bio</span>
+          </li>
+          <li class="certif-item">
+            <div class="certif-icon"><i class="fas fa-fish" aria-hidden="true"></i></div>
+            <span>Pêche MSC</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         MODALE 3 : DÉTAILS D'UN PLAT (SANS ASCENSEUR, GRANDE PHOTO)
+         ====================================================================== -->
+    <div class="modal-overlay" id="dish-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-content">
+        <button type="button" class="modal-close close-modal" aria-label="Fermer le détail du plat">&times;</button>
+        <img src="images_plats/dolmades.jpg" alt="Photo du plat" class="dish-image" id="modal-img" loading="lazy">
+        <div class="dish-details">
+          <h2 class="dish-title" id="modal-title">TITRE DU PLAT</h2>
+
+          <div class="dish-section-title">INGRÉDIENTS</div>
+          <p class="dish-text" id="modal-ingredients">Liste des ingrédients...</p>
+
+          <div class="dish-section-title">ALLERGÈNES</div>
+          <p class="dish-text" id="modal-allergens">Aucun allergène signalé.</p>
+
+          <button type="button" class="nutrition-toggle" id="nutrition-toggle" aria-expanded="false" aria-controls="nutrition-content">
+            <span>Valeurs Nutritionnelles</span>
+            <i class="fas fa-chevron-down" id="nutrition-icon" aria-hidden="true"></i>
+          </button>
+          <div class="nutrition-content" id="nutrition-content">
+            <div class="nutrition-row"><span>Calories</span><span id="nutri-cal">0 kcal</span></div>
+            <div class="nutrition-row"><span>Protéines</span><span id="nutri-prot">0 g</span></div>
+            <div class="nutrition-row"><span>Glucides</span><span id="nutri-glu">0 g</span></div>
+            <div class="nutrition-row"><span>Lipides</span><span id="nutri-lip">0 g</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         CARTE PRINCIPALE DU RESTAURANT
+         ====================================================================== -->
+    <main class="content-card">
+      <h1>La maison des cyclades</h1>
+      <div class="divider-yellow" aria-hidden="true"></div>
+
+      <!-- Coordonnées cliquables -->
+      <a href="tel:0895694412" class="contact-row" aria-label="Appeler le 08 95 69 44 12">
+        <svg class="contact-icon icon-flip" viewBox="0 0 512 512" aria-hidden="true">
+          <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/>
+        </svg>
+        <span>08 95 69 44 12</span>
+      </a>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=19+rue+des+beaugrenelles+75012+Paris" target="_blank" rel="noopener noreferrer" class="contact-row" aria-label="Ouvrir l'adresse dans Google Maps">
+        <svg class="contact-icon" viewBox="0 0 384 512" aria-hidden="true">
+          <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+        </svg>
+        <span>19 rue des beaugrenelles 75012 Paris</span>
+      </a>
+
+      <!-- Navigation par onglets (Catégories) -->
+      <div class="nav-container">
+        <nav class="nav-scroll" role="tablist" aria-label="Catégories de la carte">
+          <button type="button" class="nav-item" role="tab" aria-selected="false" data-target="menu">MENUS</button>
+          <button type="button" class="nav-item active" role="tab" aria-selected="true" data-target="entree">ENTRÉES</button>
+          <button type="button" class="nav-item" role="tab" aria-selected="false" data-target="plats">PLATS</button>
+          <button type="button" class="nav-item" role="tab" aria-selected="false" data-target="desserts">DESSERTS</button>
+          <button type="button" class="nav-item" role="tab" aria-selected="false" data-target="boissons">BOISSONS</button>
+        </nav>
+      </div>
+
+      <!-- 1. ONGLET MENUS -->
+      <section id="menu" class="tab-content" role="tabpanel">
+        <div class="info-note">NOS MENUS SONT SERVIS DU :<br>MARDI AU VENDREDI DE 12:00 À 14:00</div>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="menu-ios">
+            <div class="item-header">
+              <span class="item-name">MENU IOS <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">13,50 €</span>
+            </div>
+            <p class="item-desc">(par personne)<br>Entrée + Plat ou Plat + Dessert</p>
+          </li>
+          <li class="menu-item" data-id="menu-santorini">
+            <div class="item-header">
+              <span class="item-name">MENU SANTORINI <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">16,50 €</span>
+            </div>
+            <p class="item-desc">(par personne)<br>Entrée + Plat + Dessert</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 2. ONGLET ENTRÉES -->
+      <section id="entree" class="tab-content active" role="tabpanel">
+        <ul class="menu-list">
+          <li class="menu-item" data-id="dolmades">
+            <div class="item-header">
+              <span class="item-name">DOLMADES <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">6 €</span>
+            </div>
+            <p class="item-desc">Feuilles de vignes farcies aux riz sur un lit de tzatziki au yaourt grec</p>
+          </li>
+          <li class="menu-item" data-id="tarama">
+            <div class="item-header">
+              <span class="item-name">ASSIETTE DE TARAMA OU TZATZIKI <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">6 €</span>
+            </div>
+            <p class="item-desc">Mézé grec</p>
+          </li>
+          <li class="menu-item" data-id="dolmade1">
+            <div class="item-header">
+              <span class="item-name">DOLMADES PETIT MÉZEDES <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4,50 €</span>
+            </div>
+            <p class="item-desc">Tzatziki, Tarama, Taboulé, Caviar d'aubergine, Chypriote, Féta, etc.</p>
+          </li>
+          <li class="menu-item" data-id="xoriatiki">
+            <div class="item-header">
+              <span class="item-name">SALADE GRECQUE « XORIATIKI » <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">7 €</span>
+            </div>
+            <p class="item-desc">Salade de tomates, concombres, olives, féta, câpres et huile d'olive</p>
+          </li>
+          <li class="menu-item" data-id="taboule">
+            <div class="item-header">
+              <span class="item-name">TABOULÉ GREC <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">7 €</span>
+            </div>
+            <p class="item-desc">Persil, menthe, tomates, boulgour *supplément de 1€ pour les menus</p>
+          </li>
+          <li class="menu-item" data-id="assortiment">
+            <div class="item-header">
+              <span class="item-name">ASSORTIMENT DE 4 MÉZÉS GRECS <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">8 €</span>
+            </div>
+            <p class="item-desc">Tzatziki, Tarama, 2 Dolmades, Hommos</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3. ONGLET PLATS -->
+      <section id="plats" class="tab-content" role="tabpanel">
+        <div class="info-note">Avec les accompagnements du jour : Kritharaki, Fassolia, Salade de Serifos</div>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="moussaka">
+            <div class="item-header">
+              <span class="item-name">MOUSSAKA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">10 €</span>
+            </div>
+            <p class="item-desc">Lamelles d'aubergines, viande de bœuf hachée et béchamel</p>
+          </li>
+          <li class="menu-item" data-id="imam">
+            <div class="item-header">
+              <span class="item-name">IMAM <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">10 €</span>
+            </div>
+            <p class="item-desc">Aubergine farcie à la tomate, aux oignons et aux pignons de pin</p>
+          </li>
+          <li class="menu-item" data-id="papoutsakia">
+            <div class="item-header">
+              <span class="item-name">PAPOUTSAKIA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">10 €</span>
+            </div>
+            <p class="item-desc">Aubergine farcie à la viande et béchamel</p>
+          </li>
+          <li class="menu-item" data-id="soutsoukakia">
+            <div class="item-header">
+              <span class="item-name">SOUTSOUKAKIA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">10 €</span>
+            </div>
+            <p class="item-desc">Viande de bœuf parfumée aux épices grecques et à la sauce tomate</p>
+          </li>
+          <li class="menu-item" data-id="keftedes">
+            <div class="item-header">
+              <span class="item-name">KEFTEDES <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">10 €</span>
+            </div>
+            <p class="item-desc">3 boulettes aux choix : viande de bœuf aux herbes grecques ou courgette-feta</p>
+          </li>
+          <li class="menu-item" data-id="salade-calamar">
+            <div class="item-header">
+              <span class="item-name">SALADE <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">11 €</span>
+            </div>
+            <p class="item-desc">Calamar farci au riz, crevettes, pignons de pin et à la sauce tomate</p>
+          </li>
+          <li class="menu-item" data-id="piperia">
+            <div class="item-header">
+              <span class="item-name">PIPERIA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">11 €</span>
+            </div>
+            <p class="item-desc">Poivron farci à la viande, pignons de pin, riz, menthe et aneth</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. ONGLET DESSERTS -->
+      <section id="desserts" class="tab-content" role="tabpanel">
+        <div class="info-note text-center">TOUS NOS DESSERTS À 5€</div>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="yaourt">
+            <div class="item-header">
+              <span class="item-name">L'AUTHENTIQUE YAOURT GREC <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">Traditionnel. Servi avec son miel et ses pralines concassées</p>
+          </li>
+          <li class="menu-item" data-id="patisserie">
+            <div class="item-header">
+              <span class="item-name">1 PÂTISSERIE GRECQUE <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">Au choix : Baklava ou Kadaif ou Samousada ou Mélomakarona.</p>
+          </li>
+          <li class="menu-item" data-id="portokalopita">
+            <div class="item-header">
+              <span class="item-name">PORTOKALOPITA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">Gâteau à l'orange, pâte filo</p>
+          </li>
+          <li class="menu-item" data-id="galaktobureko">
+            <div class="item-header">
+              <span class="item-name">GALAKTOBUREKO <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">Flan grec au lait parfumé secrètement</p>
+          </li>
+          <li class="menu-item" data-id="chocolatopita">
+            <div class="item-header">
+              <span class="item-name">CHOCOLATOPITA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">Gâteau au chocolat merenda, pâte filo</p>
+          </li>
+          <li class="menu-item" data-id="cafe-gourmand">
+            <div class="item-header">
+              <span class="item-name">CAFÉ GOURMAND <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 €</span>
+            </div>
+            <p class="item-desc">1 loukoum de syros ou 1 kourabie. Accompagné d'un rosekte</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 5. ONGLET BOISSONS -->
+      <section id="boissons" class="tab-content" role="tabpanel">
+        <h3 class="subsection-title">Les Apéritifs</h3>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="ouzo">
+            <div class="item-header">
+              <span class="item-name">OUZO PLOMARI <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4,50 / 14 €</span>
+            </div>
+            <p class="item-desc">4cl / 20cl</p>
+          </li>
+          <li class="menu-item" data-id="muscat">
+            <div class="item-header">
+              <span class="item-name">MUSCAT DE SAMOS <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4,50 €</span>
+            </div>
+            <p class="item-desc">6cl Grand cru</p>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">Les Digestifs</h3>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="metaxa">
+            <div class="item-header">
+              <span class="item-name">METAXA <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4,50 €</span>
+            </div>
+            <p class="item-desc">4cl</p>
+          </li>
+          <li class="menu-item" data-id="tsipouro">
+            <div class="item-header">
+              <span class="item-name">TSIPOURO <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4,50 €</span>
+            </div>
+            <p class="item-desc">4cl (Eau de vie grecque)</p>
+          </li>
+          <li class="menu-item" data-id="rakomelo">
+            <div class="item-header">
+              <span class="item-name">RAKOMELO <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">5 / 15 €</span>
+            </div>
+            <p class="item-desc">4cl / 20cl (Raki au miel et à la cannelle)</p>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">Les Boissons</h3>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="eau">
+            <div class="item-header">
+              <span class="item-name">EAU MINÉRALE / GAZEUSE <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">2,50 €</span>
+            </div>
+            <p class="item-desc">50cl</p>
+          </li>
+          <li class="menu-item" data-id="sodas">
+            <div class="item-header">
+              <span class="item-name">SODAS <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">3 €</span>
+            </div>
+            <p class="item-desc">Coca cola, Limonade citron, Thé pêche, Orangeade (33cl)</p>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">La Bière Grecque</h3>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="mythos">
+            <div class="item-header">
+              <span class="item-name">MYTHOS <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">4 €</span>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">Boissons Chaudes</h3>
+        <ul class="menu-list">
+          <li class="menu-item" data-id="cafe">
+            <div class="item-header">
+              <span class="item-name">CAFÉ NESPRESSO <span class="info-badge" aria-hidden="true">i</span></span>
+              <span class="item-price">2,50 €</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- FOOTER MIO TABLE -->
+      <footer class="cyclades-footer">
+        <a href="https://miotable.com" class="mio-footer-link" target="_blank" rel="noopener noreferrer" aria-label="Créé avec MIO Table">
+          <img src="assets/mio_table.svg" alt="Créé par MIO Table" class="mio-svg-logo">
+        </a>
+      </footer>
+    </main>
+
+  </div>
+
+  <!-- Script Principal -->
+  <script src="script.js" defer></script>
+</body>
+</html>
